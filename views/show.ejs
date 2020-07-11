@@ -1,0 +1,19 @@
+<%- include ("partials/header") %>
+
+<h1> <%= match.title %> </h1>
+
+<img src="<%= match.image %>">
+
+<p> <%= match.created.toDateString() %> </p>
+
+<p> <%= match.body %> </p>
+
+<form action="/blogs/<%= match._id %>?_method=DELETE" method="POST">
+    <button  class="btn btn-danger">Delete</button>
+</form>
+
+<form action="/blogs/<%= match._id %>/edit" method="GET">
+    <button  class="btn btn-warning">Edit</button>
+</form>
+
+<%- include ("partials/footer") %>
